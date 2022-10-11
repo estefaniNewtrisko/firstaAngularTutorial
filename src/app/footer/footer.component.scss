@@ -1,0 +1,9 @@
+$position: absolute;
+$width:100%;
+
+.footer {
+    position: $position;
+    bottom: 0px;
+    height: 60px;
+    width: $width;
+}
