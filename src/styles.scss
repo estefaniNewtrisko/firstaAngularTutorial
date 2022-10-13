@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+$position: relative;
+$height: 100%;
+$bottom :60px;
+
+html {
+    position: $position;
+    min-height: $height;
+}
+
+body {
+    margin-bottom: $bottom;
+}
+.wrap{
+    padding-bottom: $bottom;
+}

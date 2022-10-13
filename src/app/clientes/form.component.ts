@@ -16,9 +16,10 @@ export class FormComponent implements OnInit {
 
   constructor(private clientService: ClienteService,
     private router: Router,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) { } //inyeccion de dependencias
 
-  ngOnInit(): void {
+  ngOnInit(): void {// inicializacion
+    this.cargarCliente();
   }
 
   cargarCliente(): void {
@@ -39,6 +40,11 @@ export class FormComponent implements OnInit {
       )
   }
 
-
-
+  update():void{
+    this.clientService.update(this.cliente)
+    .subscribe(cliente =>{
+      this.router.navigate(['/clientes'])
+      Swal.fire('Cliente actualizado', `Cliente ${cliente.nombre} actualizado con éxito`, `success`)
+    })
+  }
 }
